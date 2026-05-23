@@ -1,6 +1,4 @@
 import streamlit as st
-from dotenv import load_dotenv
-load_dotenv()
 import uuid
 import json
 from langchain_mistralai import ChatMistralAI
@@ -23,7 +21,8 @@ st.title("🤖 Annabelle - Polymer In Stock")
 # =========================================================
 llm = ChatMistralAI(
     model="mistral-small-2506",
-    temperature=0
+    temperature=0,
+    api_key=st.secrets["MISTRAL_API_KEY"]
 )
 
 
